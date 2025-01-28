@@ -51,3 +51,35 @@ input [type="date"] {
 select {
   background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
 }
+
+.adress .flex {
+  gap: 1.25rem;
+}
+
+.input-wrapper:has([disabled]) {
+  opacity: .5;
+}
+
+input {
+  &[disabled] {
+    background-color: var(--surface-disabled);
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
+  
+  &:invalid {
+    border:0.125rem solid var(--semantic-error);
+  }
+
+  & + small {
+    font: var(--text-sm);
+    color: #78716C;
+
+    display: inline-block;
+    margin-top: .25rem;
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
+}
